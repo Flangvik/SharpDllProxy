@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "7lwH77R4QwFA35IWEPLQacNh7s1daaLvnslHTGhdBgvG8YswE8GdbhrGhJMLFVk4ZveWfCIuDZpno3twYUjzhA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Flangvik\\source\\repos\\SharpDllProxy\\SharpDllProxy\\SharpDllProxy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Flangvik\\.nuget\\packages\\penet\\2.4.0\\penet.2.4.0.nupkg.sha512",
+    "C:\\Users\\Flangvik\\.nuget\\packages\\penet.asn1\\1.3.4\\penet.asn1.1.3.4.nupkg.sha512",
+    "C:\\Users\\Flangvik\\.nuget\\packages\\system.security.cryptography.cng\\4.7.0\\system.security.cryptography.cng.4.7.0.nupkg.sha512",
+    "C:\\Users\\Flangvik\\.nuget\\packages\\system.security.cryptography.pkcs\\4.7.0\\system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
