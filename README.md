@@ -1,11 +1,13 @@
 # SharpDllProxy
-Generates a proxy dll source code based on the exported functions which it extracts from the original DLL.
+Retrieves exported functions from a legitimate DLL and generates a proxy DLL source code/template for DLL proxy loading or sideloading
 
-Read this for setup/usage https://wordpress.com/post/redteaming.co.uk/538
+Created togheter with a blog post for redteaming.co.uk -> https://redteaming.co.uk/2020/07/12/dll-proxy-loading-your-favorite-c-implant/   
 
-![Usage](https://i.imgur.com/5COCDlz.png)
+![Usage](https://i.imgur.com/5COCDlz.png)   
 
+![Result](https://redteamingcouk.files.wordpress.com/2020/07/dll.png)
 
+Results
 # Credits
 
 [Launch Shellcode as a Thread via DllMain rather than a new process](https://gist.github.com/securitytube/c956348435cc90b8e1f7) Vivek Ramachandran    
