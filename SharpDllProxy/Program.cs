@@ -75,7 +75,7 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
             //Cheesy way to generate a temp filename for our original DLL
             var tempName = Path.GetFileNameWithoutExtension(Path.GetTempFileName());
 
-            var orgDllPath = @"C:\Users\Flangvik\source\repos\SharpDllProxy\SharpDllProxy\bin\Debug\netcoreapp3.1\libcurl.dll";
+            var orgDllPath = @"";
 
             var payloadPath = @"shellcode.bin";
 
