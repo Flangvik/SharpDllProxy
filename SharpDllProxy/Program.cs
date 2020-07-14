@@ -92,8 +92,10 @@ DWORD WINAPI DoMagic(LPVOID lpParameter)
 
                 if (args[i].ToLower().Equals("--payload") || args[i].ToLower().Equals("-payload"))
                 {
-                    if (i + 1 < args.Length)
-                        payloadPath = args[i + 1];
+                    if (i + 1 < args.Length) {
+                        //Needed to filter filename input from powershell
+                        payloadPath = Path.GetFileName(args[i + 1]);
+                    }
                 }
             }
 
