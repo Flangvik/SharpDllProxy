@@ -1,7 +1,7 @@
 # SharpDllProxy
 Retrieves exported functions from a legitimate DLL and generates a proxy DLL source code/template for DLL proxy loading or sideloading
 
-Created togheter with a blog post for redteaming.co.uk -> https://redteaming.co.uk/2020/07/12/dll-proxy-loading-your-favorite-c-implant/   
+Created together with a blog post for redteaming.co.uk -> https://redteaming.co.uk/2020/07/12/dll-proxy-loading-your-favorite-c-implant/   
 
 # Usage
 
